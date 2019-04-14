@@ -62,7 +62,7 @@ public class UbahUserManagementController implements Initializable {
     @FXML
     private void simpanClicked(){
         if(password.getText().equals("")||nama.getText().equals("")||email.getText().equals("")){
-            nav.showAlert(Alert.AlertType.WARNING, "Advertencia", null, "Completar los datos primero !!");
+            nav.showAlert(Alert.AlertType.WARNING, "Aviso", null, "Completar los datos primero !!");
         }
         else{
             model.updateUserManagement(id.getText(), password.getText(),
@@ -70,7 +70,7 @@ public class UbahUserManagementController implements Initializable {
                     level.getSelectionModel().getSelectedItem().toString(),
                     status.getSelectionModel().getSelectedItem().toString());
             if(model.getStatusUpdate()==true){
-                nav.showAlert(Alert.AlertType.INFORMATION, "Exitosamente", null, "Usuario guardado correctamente...");
+                nav.showAlert(Alert.AlertType.INFORMATION, "Proceso Completado", null, "Usuario guardado correctamente...");
             }
             else{
                 nav.showAlert(Alert.AlertType.ERROR, "Error", null, "El usuario no pudo guardar...");

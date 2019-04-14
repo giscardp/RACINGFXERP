@@ -41,9 +41,9 @@ import model.uangKeluarTable;
 
 public class UangKeluarController implements Initializable {
     
-    ObservableList<String> comboFilter = FXCollections.observableArrayList("Hari","Bulan","Semua");
-    ObservableList<String> comboBulan = FXCollections.observableArrayList("enero","febrero"
-            ,"marzo","April","May","junio","julio","agosto","septiembre","octubre","noviembre","diciembre");
+    ObservableList<String> comboFilter = FXCollections.observableArrayList("Dia","Mes","Semana");
+    ObservableList<String> comboBulan = FXCollections.observableArrayList("Enero","Febrero"
+            ,"Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
     SimpleDateFormat sdf = new SimpleDateFormat("dd MMMM yyyy");
     
     @FXML
@@ -120,7 +120,7 @@ public class UangKeluarController implements Initializable {
     time time = new time();
     
     private void setFilter(){
-        filter.setValue("Hari");
+        filter.setValue("Dia");
         filter.setItems(comboFilter);
     }
     
@@ -148,10 +148,10 @@ public class UangKeluarController implements Initializable {
     private void loadTable(){
         try {
             nav.animationFade(tableUangKeluar);
-            if(filter.getSelectionModel().getSelectedItem().toString().equals("Hari")){
+            if(filter.getSelectionModel().getSelectedItem().toString().equals("Dia")){
                 model.filterHari(hari_pilih.getValue().toString(),cari.getText());
             }
-            else if(filter.getSelectionModel().getSelectedItem().toString().equals("Bulan")){
+            else if(filter.getSelectionModel().getSelectedItem().toString().equals("Mes")){
                 model.filterBulan(bulan.getSelectionModel().getSelectedItem().toString(), tahun.getText(),cari.getText());
             }
             else{
@@ -169,12 +169,12 @@ public class UangKeluarController implements Initializable {
             }
             columnID.setCellValueFactory(new PropertyValueFactory<>("id"));
             columnNo.setCellValueFactory(new PropertyValueFactory<>("no"));
-            columnDetail.setCellValueFactory(new PropertyValueFactory<>("detalle"));
-            columnUang.setCellValueFactory(new PropertyValueFactory<>("dinero"));
-            columnUangBiasa.setCellValueFactory(new PropertyValueFactory<>("dinero ordinario"));
-            columnTanggal.setCellValueFactory(new PropertyValueFactory<>("fecha"));
-            columnTanggalBiasa.setCellValueFactory(new PropertyValueFactory<>("Fecha ordinaria"));
-            columnWaktuInput.setCellValueFactory(new PropertyValueFactory<>("Tiempo de entrada"));
+            columnDetail.setCellValueFactory(new PropertyValueFactory<>("detail"));
+            columnUang.setCellValueFactory(new PropertyValueFactory<>("uang"));
+            columnUangBiasa.setCellValueFactory(new PropertyValueFactory<>("uangBiasa"));
+            columnTanggal.setCellValueFactory(new PropertyValueFactory<>("tanggal"));
+            columnTanggalBiasa.setCellValueFactory(new PropertyValueFactory<>("tanggalBiasa"));
+            columnWaktuInput.setCellValueFactory(new PropertyValueFactory<>("waktuInput"));
             tableUangKeluar.setItems(null);
             tableUangKeluar.setItems(data);
         } catch (Exception e) {
@@ -288,7 +288,7 @@ public class UangKeluarController implements Initializable {
     @FXML
     private void ubahClicked(ActionEvent event) throws IOException {
         if(id.equals("")){
-            nav.showAlert(Alert.AlertType.WARNING, "Advertencia", null, "Por favor, seleccione los datos en la tabla de dinero..");
+            nav.showAlert(Alert.AlertType.WARNING, "Aviso", null, "Por favor, seleccione los datos en la tabla de dinero..");
         }
         else{
             openUbah();
@@ -298,7 +298,7 @@ public class UangKeluarController implements Initializable {
     @FXML
     private void hapusClicked(ActionEvent event) throws IOException{
         if(id.equals("")){
-            nav.showAlert(Alert.AlertType.WARNING, "Advertencia", null, "Por favor, seleccione los datos en la tabla de dinero..");
+            nav.showAlert(Alert.AlertType.WARNING, "Aviso", null, "Por favor, seleccione los datos en la tabla de dinero..");
         }
         else{
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -312,7 +312,7 @@ public class UangKeluarController implements Initializable {
         if (result.get() == ButtonType.OK){
             model.deleteUangKeluar(id);
             if(model.getStatusDelete()==true){
-                nav.showAlert(Alert.AlertType.INFORMATION, "El exito", null, "Datos eliminados exitosamente..");
+                nav.showAlert(Alert.AlertType.INFORMATION, "Proceso completado", null, "Datos eliminados exitosamente..");
                 loadTable();
                 clearParameter();
             }

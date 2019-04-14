@@ -62,7 +62,7 @@ public class TambahUangMasukController implements Initializable {
             @Override
             public void handle(javafx.scene.input.KeyEvent event) {
                 if (!debit.getText().matches("[0-9]*")){
-                    nav.showAlert(Alert.AlertType.WARNING, "Advertencia", null, "Solo los números pueden ser !!");
+                    nav.showAlert(Alert.AlertType.WARNING, "Aviso", null, "Solo los números pueden ser !!");
                     debit.setText("");
                     debit.requestFocus();
                 }
@@ -75,7 +75,7 @@ public class TambahUangMasukController implements Initializable {
             @Override
             public void handle(javafx.scene.input.KeyEvent event) {
                 if (!kredit.getText().matches("[0-9]*")){
-                    nav.showAlert(Alert.AlertType.WARNING, "Advertencia", null, "Solo los números pueden ser !!");
+                    nav.showAlert(Alert.AlertType.WARNING, "Aviso", null, "Solo los números pueden ser !!");
                     kredit.setText("");
                     kredit.requestFocus();
                 }
@@ -83,7 +83,7 @@ public class TambahUangMasukController implements Initializable {
                     int debitValue=Integer.parseInt(debit.getText());
                     int kreditValue=Integer.parseInt(kredit.getText());
                     if(kreditValue>debitValue){
-                        nav.showAlert(Alert.AlertType.WARNING, "Advertencia", null, "El crédito no puede ser mayor que el débito. !!");
+                        nav.showAlert(Alert.AlertType.WARNING, "Aviso", null, "El crédito no puede ser mayor que el débito. !!");
                         kredit.setText("");
                         kredit.requestFocus();
                     }
@@ -118,7 +118,7 @@ public class TambahUangMasukController implements Initializable {
     private void inputMethod(){
         if(detail_uang_masuk.getText().equals("")||debit.getText().equals("")
                 ||date_uang_masuk_text.getText().equals("")||kredit.getText().equals("")){
-            nav.showAlert(Alert.AlertType.WARNING, "Advertencia", null, "Completar los datos primero !!");
+            nav.showAlert(Alert.AlertType.WARNING, "Aviso", null, "Debe Completar los datos primero !!");
         }
         else{
             DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
@@ -131,7 +131,7 @@ public class TambahUangMasukController implements Initializable {
             String waktuInputText=dateFormat.format(cal.getTime());
             model.insertUangMasuk(detailText, debitText, kreditText, pilihText, tanggalText, waktuInputText);
             if(model.getInsert()==true){
-                nav.showAlert(Alert.AlertType.INFORMATION, "Exitosamente", null, "Dinero entrante ahorrado..");
+                nav.showAlert(Alert.AlertType.INFORMATION, "Completado Exitosamente", null, "Dinero entrante ahorrado..");
                 clear();
             }
             else{

@@ -124,9 +124,9 @@ public class LaporanUangKeluarHarianController implements Initializable {
                         kon.res.getString(1), uangFormat, kon.res.getString(3)));
             }
             columnNo.setCellValueFactory(new PropertyValueFactory<>("no"));
-            columnDetail.setCellValueFactory(new PropertyValueFactory<>("detalle"));
-            columnUang.setCellValueFactory(new PropertyValueFactory<>("dinero"));
-            columnTanggal.setCellValueFactory(new PropertyValueFactory<>("fecha"));
+            columnDetail.setCellValueFactory(new PropertyValueFactory<>("detail"));
+            columnUang.setCellValueFactory(new PropertyValueFactory<>("uang"));
+            columnTanggal.setCellValueFactory(new PropertyValueFactory<>("tanggal"));
             tableUangKeluar.setItems(null);
             tableUangKeluar.setItems(data);
             model.filterLaporanHarianTotal(hari_pilih.getValue().toString());
@@ -280,7 +280,7 @@ public class LaporanUangKeluarHarianController implements Initializable {
             }
         }
         FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Save to Excel");
+        fileChooser.setTitle("Guardar en Excel");
         fileChooser.getExtensionFilters().addAll(
                 new FileChooser.ExtensionFilter("Microsoft Office Excel 2010", "*.xlsx"));
         File selectedFile = fileChooser.showSaveDialog(null);
@@ -290,7 +290,7 @@ public class LaporanUangKeluarHarianController implements Initializable {
             wb.write(fileout);
             fileout.close();
             tray.setNotificationType(NotificationType.CUSTOM);
-            tray.setTitle("Save Success");
+            tray.setTitle("Guardado Exitoso");
             tray.setMessage("Archivo guardado correctamente...");
             tray.setAnimationType(AnimationType.POPUP);
             tray.showAndDismiss(Duration.millis(1000));

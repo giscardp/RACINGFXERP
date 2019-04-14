@@ -119,7 +119,7 @@ public class LoginController implements Initializable {
                 else{
                     tray.setNotificationType(NotificationType.CUSTOM);
                     tray.setTitle("Acceso exitoso");
-                    tray.setMessage("Hola "+log.getNama()+". Bienvenido a mis aplicaciones");
+                    tray.setMessage("Hola "+log.getNama()+". Bienvenido a la aplicacion");
                     tray.setAnimationType(AnimationType.FADE);
                     tray.showAndDismiss(Duration.millis(1500));
                     tray.setRectangleFill(Color.valueOf("#4183D7"));
@@ -145,7 +145,7 @@ public class LoginController implements Initializable {
                     pp.setFill(javafx.scene.paint.Color.TRANSPARENT);
                     stage.initStyle(StageStyle.TRANSPARENT);
                     stage.setScene(pp);
-                    stage.setTitle("Home");
+                    stage.setTitle("Inicio");
                     stage.getIcons().add(nav.applicationIcon);
                     mouseDrag md = new mouseDrag();
                     md.setDragged(p, stage);

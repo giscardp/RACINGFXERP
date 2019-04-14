@@ -56,7 +56,7 @@ public class TambahUangKeluarController implements Initializable {
     
     private void inputMethod(){
         if(detail_uang_keluar.getText().equals("")||uang_keluar.getText().equals("")||date_uang_keluar_text.getText().equals("")){
-            nav.showAlert(Alert.AlertType.WARNING, "Advertencia", null, "Completar los datos primero !!");
+            nav.showAlert(Alert.AlertType.WARNING, "Aviso", null, "Primero debe completar los datos!!");
         }
         else{
             DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
@@ -68,7 +68,7 @@ public class TambahUangKeluarController implements Initializable {
             String waktu_input=dateFormat.format(cal.getTime());
             model.insertUangKeluar(detail, uang, date, waktu_input);
             if(model.getStatusInert()==true){
-                nav.showAlert(Alert.AlertType.INFORMATION, "El exito", null, "Dinero saliente ahorrado..");
+                nav.showAlert(Alert.AlertType.INFORMATION, "Completado con Exito", null, "Dinero saliente ahorrado..");
                 clear();
             }
             else{

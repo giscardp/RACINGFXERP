@@ -18,20 +18,20 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="utama" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="455.0" prefWidth="774.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LaporanUangMasukBulananController">
+<AnchorPane fx:id="utama" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="455.0" prefWidth="731.0" style="-fx-background-color: #FFFFFF;" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LaporanUangMasukBulananController">
    <children>
-      <AnchorPane fx:id="dataUangMasuk" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="dataUangMasuk" prefHeight="455.0" prefWidth="729.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="0.0">
          <children>
-            <AnchorPane fx:id="blur" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane fx:id="blur" prefHeight="455.0" prefWidth="729.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="764.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0">
                      <children>
-                        <GridPane prefHeight="40.0" prefWidth="773.0">
+                        <GridPane prefHeight="40.0" prefWidth="703.0">
                            <columnConstraints>
                               <ColumnConstraints hgrow="SOMETIMES" maxWidth="702.0" minWidth="0.0" prefWidth="254.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="649.0" minWidth="10.0" prefWidth="148.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="649.0" minWidth="10.0" prefWidth="151.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="649.0" minWidth="10.0" prefWidth="209.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="649.0" minWidth="10.0" prefWidth="142.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="649.0" minWidth="10.0" prefWidth="201.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="649.0" minWidth="10.0" prefWidth="90.0" />
                            </columnConstraints>
                            <rowConstraints>
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -42,7 +42,7 @@
                                     <Font name="Segoe UI Semibold" size="12.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="total_uang_masuk" alignment="CENTER" prefHeight="17.0" prefWidth="212.0" text="total" GridPane.columnIndex="3">
+                              <Label fx:id="total_uang_masuk" alignment="CENTER" prefHeight="17.0" prefWidth="118.0" text="total" GridPane.columnIndex="3">
                                  <font>
                                     <Font name="Segoe UI Semibold" size="12.0" />
                                  </font></Label>
@@ -60,10 +60,10 @@
                         </GridPane>
                      </children>
                   </HBox>
-                  <TableView fx:id="tableUangMasuk" fixedCellSize="0.0" focusTraversable="false" layoutY="60.0" prefHeight="356.0" prefWidth="764.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="59.0">
+                  <TableView fx:id="tableUangMasuk" fixedCellSize="0.0" focusTraversable="false" layoutY="60.0" prefHeight="356.0" prefWidth="713.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="-41.0" AnchorPane.topAnchor="59.0">
                      <columns>
                         <TableColumn fx:id="columnNo" editable="false" prefWidth="52.0" resizable="false" sortable="false" text="No" />
-                        <TableColumn fx:id="columnTanggal" editable="false" prefWidth="184.0" resizable="false" sortable="false" text="Fecha" />
+                        <TableColumn fx:id="columnTanggal" editable="false" prefWidth="150.0" resizable="false" sortable="false" text="Fecha" />
                         <TableColumn fx:id="columnBakul" editable="false" prefWidth="168.0" sortable="false" text="Dinero entrando en Bakul" />
                         <TableColumn fx:id="columnHotel" editable="false" prefWidth="193.0" sortable="false" text="Dinero que ingresa a los hoteles" />
                         <TableColumn fx:id="columnUang" editable="false" prefWidth="164.0" resizable="false" sortable="false" text="Cuota de entrada total" />
@@ -75,20 +75,20 @@
       </AnchorPane>
       <AnchorPane layoutX="10.0" layoutY="2.0" prefHeight="46.0" prefWidth="764.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="6.0">
          <children>
-            <JFXButton focusTraversable="false" layoutX="227.0" layoutY="10.0" onAction="#refreshClicked" prefHeight="28.0" prefWidth="72.0" style="-fx-background-color: #DADFE1;" text="Refrescar" AnchorPane.bottomAnchor="9.0" AnchorPane.rightAnchor="465.0" AnchorPane.topAnchor="9.0">
+            <JFXButton focusTraversable="false" layoutX="220.0" layoutY="10.0" onAction="#refreshClicked" prefHeight="28.0" prefWidth="72.0" style="-fx-background-color: #DADFE1;" text="Refrescar" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="429.0" AnchorPane.topAnchor="10.0">
                <font>
                   <Font name="Segoe UI" size="12.0" />
                </font>
             </JFXButton>
             <Separator layoutY="4.0" orientation="VERTICAL" prefHeight="40.0" prefWidth="0.0" />
-            <JFXComboBox fx:id="bulan" focusTraversable="false" labelFloat="true" layoutX="14.0" layoutY="11.0" prefHeight="25.0" prefWidth="145.0" promptText="La luna" AnchorPane.bottomAnchor="10.0" AnchorPane.topAnchor="11.0" />
+            <JFXComboBox fx:id="bulan" focusTraversable="false" labelFloat="true" layoutX="14.0" layoutY="11.0" prefHeight="25.0" prefWidth="145.0" promptText="Mes" AnchorPane.bottomAnchor="10.0" AnchorPane.topAnchor="11.0" />
             <JFXTextField fx:id="tahun" focusTraversable="false" labelFloat="true" layoutX="170.0" layoutY="11.0" prefHeight="25.0" prefWidth="38.0" promptText="Año" AnchorPane.bottomAnchor="10.0" AnchorPane.topAnchor="11.0" />
-            <JFXButton fx:id="btnOutput" contentDisplay="RIGHT" focusTraversable="false" layoutX="646.0" layoutY="10.0" onMouseClicked="#openContext" prefHeight="28.0" prefWidth="145.0" style="-fx-background-color: #DADFE1;" text="Guardar o imprimir" AnchorPane.bottomAnchor="9.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="9.0">
+            <JFXButton fx:id="btnOutput" contentDisplay="RIGHT" focusTraversable="false" layoutX="565.0" layoutY="9.0" onMouseClicked="#openContext" prefHeight="28.0" prefWidth="145.0" style="-fx-background-color: #DADFE1;" text="Guardar o imprimir" AnchorPane.bottomAnchor="9.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="9.0">
                <contextMenu>
                   <ContextMenu fx:id="contextOutput">
                      <items>
-                        <MenuItem mnemonicParsing="false" onAction="#saveXLSX" text="Save to Excel" />
-                        <MenuItem mnemonicParsing="false" onAction="#printClicked" text="Print" />
+                        <MenuItem mnemonicParsing="false" onAction="#saveXLSX" text="Exportar a Excel" />
+                        <MenuItem mnemonicParsing="false" onAction="#printClicked" text="Imprimir" />
                      </items>
                   </ContextMenu>
                </contextMenu>

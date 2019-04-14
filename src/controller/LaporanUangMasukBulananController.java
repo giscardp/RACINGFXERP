@@ -57,8 +57,8 @@ import tray.notification.TrayNotification;
 public class LaporanUangMasukBulananController implements Initializable {
     
     ObservableList<String> comboJenis = FXCollections.observableArrayList("Todo","La cesta","Hotel");  
-    ObservableList<String> comboBulan = FXCollections.observableArrayList("January","February"
-            ,"March","April","May","June","July","August","September","October","November","December");
+    ObservableList<String> comboBulan = FXCollections.observableArrayList("Enero","Febrero"
+            ,"Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
     
     @FXML
     private TableView<laporanUangMasukBulananTable> tableUangMasuk;
@@ -132,10 +132,10 @@ public class LaporanUangMasukBulananController implements Initializable {
                         kon.res.getString(4), uangBakulFormat, uangHotelFormat, uangFormat ));
             }
             columnNo.setCellValueFactory(new PropertyValueFactory<>("no"));
-            columnTanggal.setCellValueFactory(new PropertyValueFactory<>("fecha"));
-            columnBakul.setCellValueFactory(new PropertyValueFactory<>("dinero"));
-            columnHotel.setCellValueFactory(new PropertyValueFactory<>("dinero del hotel"));
-            columnUang.setCellValueFactory(new PropertyValueFactory<>("dinero"));
+            columnTanggal.setCellValueFactory(new PropertyValueFactory<>("tanggal"));
+            columnBakul.setCellValueFactory(new PropertyValueFactory<>("uangBakul"));
+            columnHotel.setCellValueFactory(new PropertyValueFactory<>("uangHotel"));
+            columnUang.setCellValueFactory(new PropertyValueFactory<>("uang"));
             tableUangMasuk.setItems(null);
             tableUangMasuk.setItems(data);
             model.queryLaporanBulananTotal(bulan.getSelectionModel().getSelectedItem().toString(), tahun.getText());
@@ -335,7 +335,7 @@ public class LaporanUangMasukBulananController implements Initializable {
             }
         }
         FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Save to Excel");
+        fileChooser.setTitle("Guardar en Excel");
         fileChooser.getExtensionFilters().addAll(
                 new FileChooser.ExtensionFilter("Microsoft Office Excel 2010", "*.xlsx"));
         File selectedFile = fileChooser.showSaveDialog(null);
@@ -345,7 +345,7 @@ public class LaporanUangMasukBulananController implements Initializable {
             wb.write(fileout);
             fileout.close();
             tray.setNotificationType(NotificationType.CUSTOM);
-            tray.setTitle("Save Success");
+            tray.setTitle("Guardado Exitoso");
             tray.setMessage("Archivo guardado correctamente...");
             tray.setAnimationType(AnimationType.POPUP);
             tray.showAndDismiss(Duration.millis(1000));

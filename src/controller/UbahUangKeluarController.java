@@ -52,7 +52,7 @@ public class UbahUangKeluarController implements Initializable {
     @FXML
     private void simpanClicked(ActionEvent event){
        if(detail_uang_keluar.getText().equals("")||uang_keluar.getText().equals("")||date_uang_keluar_text.getText().equals("")){
-           nav.showAlert(Alert.AlertType.WARNING, "Peringatan", null, "Lengkapi data terlebih dahulu !!");
+           nav.showAlert(Alert.AlertType.WARNING, "Aviso", null, "Completar los datos primero !!");
        } 
        else{
            String idText=idUangKeluar.getText();
@@ -61,10 +61,10 @@ public class UbahUangKeluarController implements Initializable {
            String tanggalText=date_uang_keluar.getValue().toString();
            model.updateUangKeluar(idText, detailText, uangText, tanggalText);
            if(model.getStatusUpdate()==true){
-               nav.showAlert(Alert.AlertType.INFORMATION, "Sukses", null, "Uang keluar telah disimpan..");
+               nav.showAlert(Alert.AlertType.INFORMATION, "Completado Exitosamente", null, "Dinero saliente ahorrado..");
            }
            else{
-               nav.showAlert(Alert.AlertType.ERROR, "Error", null, "Uang masuk gagal disimpan..");
+               nav.showAlert(Alert.AlertType.ERROR, "Error", null, "El dinero entrante no pudo ahorrar..");
            }
        }
     }

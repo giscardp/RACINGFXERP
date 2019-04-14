@@ -57,8 +57,8 @@ import tray.notification.TrayNotification;
 
 public class LaporanUangKeluarBulananController implements Initializable {
     
-    ObservableList<String> comboBulan = FXCollections.observableArrayList("enero","febrero"
-            ,"marzo","abril","Mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre");
+    ObservableList<String> comboBulan = FXCollections.observableArrayList("Enero","Febrero"
+            ,"Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
     
     @FXML
     private TableView<laporanUangKeluarBulananTable> tableUangKeluar;
@@ -124,8 +124,8 @@ public class LaporanUangKeluarBulananController implements Initializable {
                         kon.res.getString(1), uangFormat));
             }
             columnNo.setCellValueFactory(new PropertyValueFactory<>("no"));
-            columnTanggal.setCellValueFactory(new PropertyValueFactory<>("fecha"));
-            columnUang.setCellValueFactory(new PropertyValueFactory<>("dinero"));
+            columnTanggal.setCellValueFactory(new PropertyValueFactory<>("tanggal"));
+            columnUang.setCellValueFactory(new PropertyValueFactory<>("uang"));
             tableUangKeluar.setItems(null);
             tableUangKeluar.setItems(data);
             model.filterLaporanBulananTotal(bulan.getSelectionModel().getSelectedItem().toString(), tahun.getText());
@@ -272,7 +272,7 @@ public class LaporanUangKeluarBulananController implements Initializable {
             }
         }
         FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Save to Excel");
+        fileChooser.setTitle("Guardar en Excel");
         fileChooser.getExtensionFilters().addAll(
                 new FileChooser.ExtensionFilter("Microsoft Office Excel 2010", "*.xlsx"));
         File selectedFile = fileChooser.showSaveDialog(null);
@@ -282,7 +282,7 @@ public class LaporanUangKeluarBulananController implements Initializable {
             wb.write(fileout);
             fileout.close();
             tray.setNotificationType(NotificationType.CUSTOM);
-            tray.setTitle("Save Success");
+            tray.setTitle("Guardado Exitoso");
             tray.setMessage("Archivo guardado correctamente...");
             tray.setAnimationType(AnimationType.POPUP);
             tray.showAndDismiss(Duration.millis(1000));

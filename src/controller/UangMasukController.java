@@ -46,10 +46,10 @@ import model.uangMasukTable;
 
 public class UangMasukController implements Initializable {
     
-    ObservableList<String> comboFilter = FXCollections.observableArrayList("Hari","Bulan","Semua");
-    ObservableList<String> comboJenis = FXCollections.observableArrayList("Semua","Bakul","Hotel");
-    ObservableList<String> comboBulan = FXCollections.observableArrayList("January","February"
-            ,"March","April","May","June","July","August","September","October","November","December");
+    ObservableList<String> comboFilter = FXCollections.observableArrayList("Dia","Mes","Semana");
+    ObservableList<String> comboJenis = FXCollections.observableArrayList("Semana","Bakul","Hotel");
+    ObservableList<String> comboBulan = FXCollections.observableArrayList("Enero","Febrero"
+            ,"Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciember");
     SimpleDateFormat sdf = new SimpleDateFormat("dd MMMM yyyy");
     
     @FXML
@@ -135,11 +135,11 @@ public class UangMasukController implements Initializable {
     time time = new time();
     
     private void setFilter(){
-        filter.setValue("Hari");
+        filter.setValue("Dia");
         filter.setItems(comboFilter);
     }
     private void setJenis(){
-        jenis.setValue("Semua");
+        jenis.setValue("Semana");
         jenis.setItems(comboJenis);
     }
     
@@ -193,10 +193,10 @@ public class UangMasukController implements Initializable {
     private void loadTable(){
         try {
             nav.animationFade(tableUangMasuk);
-            if(filter.getSelectionModel().getSelectedItem().toString().equals("Hari")){
+            if(filter.getSelectionModel().getSelectedItem().toString().equals("Dia")){
                 model.filterHari(hari_pilih.getValue().toString(),cari.getText(),jenis.getSelectionModel().getSelectedItem().toString());
             }
-            else if(filter.getSelectionModel().getSelectedItem().toString().equals("Bulan")){
+            else if(filter.getSelectionModel().getSelectedItem().toString().equals("Mes")){
                 model.filterBulan(bulan.getSelectionModel().getSelectedItem().toString(), tahun.getText(),cari.getText(),jenis.getSelectionModel().getSelectedItem().toString());
             }
             else{
@@ -235,14 +235,14 @@ public class UangMasukController implements Initializable {
     
     @FXML
     private void filterClicked(ActionEvent event){
-        if(filter.getSelectionModel().getSelectedItem().toString().equals("Hari")){
+        if(filter.getSelectionModel().getSelectedItem().toString().equals("Dia")){
             bulan.setVisible(false);
             hari.setVisible(true);
             hari_pilih.setVisible(true);
             tahun.setVisible(false);
             setHari();
         }
-        else if (filter.getSelectionModel().getSelectedItem().toString().equals("Bulan")){
+        else if (filter.getSelectionModel().getSelectedItem().toString().equals("Mes")){
             bulan.setVisible(true);
             hari.setVisible(false);
             hari_pilih.setVisible(false);
@@ -324,7 +324,7 @@ public class UangMasukController implements Initializable {
     @FXML
     private void ubahClicked(ActionEvent event) throws IOException {
         if(id.equals("")){
-            nav.showAlert(Alert.AlertType.WARNING, "Peringatan", null, "Silahkan pilih data pada tabel uang masuk..");
+            nav.showAlert(Alert.AlertType.WARNING, "Aviso", null, "Por favor seleccione los datos en el dinero en la tabla..");
         }
         else{
             openUbah();
@@ -334,29 +334,29 @@ public class UangMasukController implements Initializable {
     @FXML
     private void hapusClicked(ActionEvent event) throws IOException{
         if(id.equals("")){
-            nav.showAlert(Alert.AlertType.WARNING, "Peringatan", null, "Silahkan pilih data pada tabel uang masuk..");
+            nav.showAlert(Alert.AlertType.WARNING, "Aviso", null, "Por favor seleccione los datos en el dinero en la tabla..");
         }
         else{
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Hapus data uang masuk");
-        alert.setHeaderText("Detail\t\t: "+detail
-                +"\nDebit\t\t: "+num.format(Integer.parseInt(id))
-                +"\nKredit\t\t: "+kredit
+        alert.setTitle("Eliminar datos de dinero entrante");
+        alert.setHeaderText("Detalle\t\t: "+detail
+                +"\nDebito\t\t: "+num.format(Integer.parseInt(id))
+                +"\nCredito\t\t: "+kredit
                 +"\nSaldo\t\t: "+(Integer.parseInt(debit)-Integer.parseInt(kredit))
-                +"\nJenis\t\t\t: "+pilih
-                +"\nTanggal\t\t: "+tanggal);
-        alert.setContentText("Anda yakin ingin menghapus data ini ?");
+                +"\nTipo\t\t\t: "+pilih
+                +"\nFecha\t\t: "+tanggal);
+        alert.setContentText("Seguro que quieres borrar estos datos.?");
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK){
             model.deleteUangMasuk(id);
             if(model.getDelete()==true){
-                nav.showAlert(Alert.AlertType.INFORMATION, "Sukses", null, "Data berhasil dihapus..");
+                nav.showAlert(Alert.AlertType.INFORMATION, "Proceso Completado ", null, "Datos eliminados exitosamente..");
                 loadTable();
                 clearParameter();
             }
             else{
-                nav.showAlert(Alert.AlertType.ERROR, "Error", null, "Data gagal dihapus..");
+                nav.showAlert(Alert.AlertType.ERROR, "Error", null, "Los datos no se pudieron eliminar..");
             }
         } 
         }

@@ -134,7 +134,7 @@ public class HomeController implements Initializable {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Confirmación");
         alert.setHeaderText(null);
-        alert.setContentText("Seguro que quieres salir de la aplicación. ?");
+        alert.setContentText("Seguro que quieres salir de la aplicación.?");
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK){
             model.setStatus(idUser.getText());
@@ -317,14 +317,14 @@ public class HomeController implements Initializable {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Cerrar sesión");
         alert.setHeaderText(null);
-        alert.setContentText("Estás seguro de que quieres cerrar sesión ?");
+        alert.setContentText("Estás seguro de que quieres cerrar sesión?");
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK){
             
             tray.setNotificationType(NotificationType.CUSTOM);
             tray.setTitle("Éxito de cierre de sesión");
-            tray.setMessage("Adiós "+namaUser.getText()+". Gracias por usar mis aplicaciones");
+            tray.setMessage("Adiós "+namaUser.getText()+". Gracias por usar mi aplicacion");
             tray.setAnimationType(AnimationType.FADE);
             tray.showAndDismiss(Duration.millis(1500));
             tray.setRectangleFill(Color.valueOf("#4183D7"));

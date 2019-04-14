@@ -50,12 +50,12 @@ public class TambahUserManagementController implements Initializable {
     private void tambahClicked(){
         if(username.getText().equals("")||password.getText().equals("")||
                 nama.getText().equals("")||email.getText().equals("")){
-            nav.showAlert(Alert.AlertType.WARNING, "Advertencia", null, "Completar los datos primero !!");
+            nav.showAlert(Alert.AlertType.WARNING, "Aviso", null, "Completar los datos primero !!");
         }
         else{
             model.cekUsername(username.getText());
             if(model.getRowUsername()==1){
-                nav.showAlert(Alert.AlertType.WARNING, "Advertencia", null, "El nombre de usuario ya está registrado..\nPor favor use otro nombre de usuario..");
+                nav.showAlert(Alert.AlertType.WARNING, "Aviso", null, "El nombre de usuario ya está registrado..\nPor favor use otro nombre de usuario..");
                 username.setText("");
                 username.requestFocus();
             }
@@ -64,7 +64,7 @@ public class TambahUserManagementController implements Initializable {
                         nama.getText(), email.getText(), 
                         level.getSelectionModel().getSelectedItem().toString());
                 if(model.getStatusInsert()==true){
-                    nav.showAlert(Alert.AlertType.INFORMATION, "Exitosamente", null, "Se ha guardado un nuevo usuario...");
+                    nav.showAlert(Alert.AlertType.INFORMATION, "Completado Exitosamente", null, "Se ha guardado un nuevo usuario...");
                     clear();
                 }
                 else{

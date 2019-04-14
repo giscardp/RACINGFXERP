@@ -52,7 +52,7 @@ public class DatabaseController implements Initializable {
             Stage app_stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
             app_stage.hide();
             app_stage.setScene(database_scene);
-            app_stage.setTitle("Login");
+            app_stage.setTitle("Iniciar sesión");
             mouseDrag md = new mouseDrag();
             md.setDragged(database_parent, app_stage);
             app_stage.getIcons().add(nav.applicationIcon);

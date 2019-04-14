@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pane" prefHeight="368.0" prefWidth="301.0" style="-fx-background-color: #ececec;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TambahUangMasukController">
+<AnchorPane fx:id="pane" prefHeight="368.0" prefWidth="301.0" style="-fx-background-color: #ececec;" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TambahUangMasukController">
    <children>
       <Group layoutX="45.0" layoutY="88.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
          <children>

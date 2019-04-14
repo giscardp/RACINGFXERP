@@ -18,18 +18,18 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="utama" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="455.0" prefWidth="774.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LaporanUangKeluarHarianController">
+<AnchorPane fx:id="utama" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="455.0" prefWidth="736.0" style="-fx-background-color: #FFFFFF;" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LaporanUangKeluarHarianController">
    <children>
-      <AnchorPane fx:id="dataUangMasuk" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="dataUangMasuk" prefHeight="455.0" prefWidth="764.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
          <children>
-            <AnchorPane fx:id="blur" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane fx:id="blur" prefHeight="455.0" prefWidth="739.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="0.0">
                <children>
                   <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="764.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0">
                      <children>
-                        <GridPane prefHeight="40.0" prefWidth="773.0">
+                        <GridPane prefHeight="40.0" prefWidth="715.0">
                            <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="582.0" minWidth="0.0" prefWidth="577.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="649.0" minWidth="10.0" prefWidth="187.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="582.0" minWidth="0.0" prefWidth="546.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="649.0" minWidth="10.0" prefWidth="218.0" />
                            </columnConstraints>
                            <rowConstraints>
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -40,7 +40,7 @@
                                     <Font name="Segoe UI Semibold" size="12.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="total_uang_keluar" alignment="CENTER" prefHeight="17.0" prefWidth="178.0" text="total" GridPane.columnIndex="1">
+                              <Label fx:id="total_uang_keluar" alignment="CENTER" prefHeight="17.0" prefWidth="224.0" text="total" GridPane.columnIndex="1">
                                  <font>
                                     <Font name="Segoe UI Semibold" size="12.0" />
                                  </font>
@@ -49,11 +49,11 @@
                         </GridPane>
                      </children>
                   </HBox>
-                  <TableView fx:id="tableUangKeluar" fixedCellSize="0.0" focusTraversable="false" layoutY="60.0" prefHeight="355.0" prefWidth="764.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="59.0">
+                  <TableView fx:id="tableUangKeluar" fixedCellSize="0.0" focusTraversable="false" layoutY="60.0" prefHeight="356.0" prefWidth="756.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="-37.0" AnchorPane.topAnchor="59.0">
                      <columns>
                         <TableColumn fx:id="columnNo" editable="false" prefWidth="52.0" resizable="false" sortable="false" text="No" />
                         <TableColumn fx:id="columnDetail" editable="false" prefWidth="276.0" resizable="false" sortable="false" text="Detalles de salida de dinero" />
-                        <TableColumn fx:id="columnTanggal" editable="false" prefWidth="246.0" resizable="false" sortable="false" text="Fecha de salida del dinero" />
+                        <TableColumn fx:id="columnTanggal" editable="false" prefWidth="200.0" resizable="false" sortable="false" text="Fecha de salida del dinero" />
                         <TableColumn fx:id="columnUang" editable="false" prefWidth="188.0" resizable="false" sortable="false" text="Dinero fuera" />
                      </columns>
                   </TableView>
@@ -71,12 +71,12 @@
                </font>
             </JFXButton>
             <Separator layoutY="4.0" orientation="VERTICAL" prefHeight="40.0" prefWidth="0.0" />
-            <JFXButton fx:id="btnOutput" contentDisplay="RIGHT" focusTraversable="false" layoutX="641.0" layoutY="9.0" onMouseClicked="#openContext" prefHeight="28.0" prefWidth="139.0" style="-fx-background-color: #DADFE1;" text="Guardar o imprimir" AnchorPane.bottomAnchor="9.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="9.0">
+            <JFXButton fx:id="btnOutput" contentDisplay="RIGHT" focusTraversable="false" layoutX="572.0" layoutY="9.0" onMouseClicked="#openContext" prefHeight="28.0" prefWidth="139.0" style="-fx-background-color: #DADFE1;" text="Guardar o imprimir" AnchorPane.bottomAnchor="9.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="9.0">
                <contextMenu>
                   <ContextMenu fx:id="contextOutput">
                      <items>
-                        <MenuItem mnemonicParsing="false" onAction="#saveXLSX" text="Save to Excel" />
-                        <MenuItem mnemonicParsing="false" onAction="#printClicked" text="Print" />
+                        <MenuItem mnemonicParsing="false" onAction="#saveXLSX" text="Exportar a Excel" />
+                        <MenuItem mnemonicParsing="false" onAction="#printClicked" text="Imprimir" />
                      </items>
                   </ContextMenu>
                </contextMenu>

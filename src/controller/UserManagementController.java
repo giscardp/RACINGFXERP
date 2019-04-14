@@ -197,7 +197,7 @@ public class UserManagementController implements Initializable {
     @FXML
     private void ubahClicked() throws IOException{
         if(id.equals("")){
-            nav.showAlert(Alert.AlertType.WARNING, "Advertencia", null, "Por favor, seleccione los datos en la tabla de usuario..");
+            nav.showAlert(Alert.AlertType.WARNING, "Aviso", null, "Por favor, seleccione los datos en la tabla de usuario..");
         }
         else{
             openUbah();
@@ -207,13 +207,13 @@ public class UserManagementController implements Initializable {
     @FXML
     private void hapusClicked(ActionEvent event) throws IOException{
         if(id.equals("")){
-            nav.showAlert(Alert.AlertType.WARNING, "Advertencia", null, "Por favor, seleccione los datos en la tabla de usuario..");
+            nav.showAlert(Alert.AlertType.WARNING, "Aviso", null, "Por favor, seleccione los datos en la tabla de usuario..");
         }
         else{
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Hapus data user");
+        alert.setTitle("Eliminar datos de usuario");
         alert.setHeaderText("Usuario\t: "+username
-                +"\nContraseña\t\t: "+password+"\nNama\t\t: "+nama
+                +"\nContraseña\t\t: "+password+"\nNombre\t\t: "+nama
                 +"\nEmail\t\t: "+email+"\nNivel\t\t: "+level);
         alert.setContentText("Seguro que quieres borrar estos datos. ?");
         Optional<ButtonType> result = alert.showAndWait();

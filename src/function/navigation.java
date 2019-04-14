@@ -36,6 +36,7 @@ public class navigation {
     
     public Image applicationIcon = new Image(getClass().getResourceAsStream("/img/icons8_Source_Code_104px_2.png"));
     
+    
     public String getHome(){
         return home;
     }

@@ -64,7 +64,7 @@ public class UbahUangMasukController implements Initializable {
             @Override
             public void handle(javafx.scene.input.KeyEvent event) {
                 if (!debit.getText().matches("[0-9]*")){
-                    nav.showAlert(Alert.AlertType.WARNING, "Peringatan", null, "Hanya boleh angka !!");
+                    nav.showAlert(Alert.AlertType.WARNING, "Aviso", null, "Solo numeros !!");
                     debit.setText("");
                     debit.requestFocus();
                 }
@@ -77,7 +77,7 @@ public class UbahUangMasukController implements Initializable {
             @Override
             public void handle(javafx.scene.input.KeyEvent event) {
                 if (!kredit.getText().matches("[0-9]*")){
-                    nav.showAlert(Alert.AlertType.WARNING, "Peringatan", null, "Hanya boleh angka !!");
+                    nav.showAlert(Alert.AlertType.WARNING, "Aviso", null, "Solo numeros !!");
                     kredit.setText("");
                     kredit.requestFocus();
                 }
@@ -85,7 +85,7 @@ public class UbahUangMasukController implements Initializable {
                     int debitValue=Integer.parseInt(debit.getText());
                     int kreditValue=Integer.parseInt(kredit.getText());
                     if(kreditValue>debitValue){
-                        nav.showAlert(Alert.AlertType.WARNING, "Peringatan", null, "Kredit tidak boleh lebih besar dari Debit !!");
+                        nav.showAlert(Alert.AlertType.WARNING, "Aviso", null, "El crédito no puede ser mayor que el débito. !!");
                         kredit.setText("");
                         kredit.requestFocus();
                     }
@@ -115,7 +115,7 @@ public class UbahUangMasukController implements Initializable {
     private void simpanClicked(ActionEvent event) throws IOException, ParseException{
         if(detail_uang_masuk.getText().equals("")||debit.getText().equals("")||kredit.getText().equals("")
                 ||date_uang_masuk_text.getText().equals("")){
-            nav.showAlert(Alert.AlertType.WARNING, "Peringatan", null, "Lengkapi data terlebih dahulu !!");
+            nav.showAlert(Alert.AlertType.WARNING, "Aviso", null, "Completar los datos primero !!");
         }
         else{
             String idText=idUangMasuk.getText();
@@ -126,10 +126,10 @@ public class UbahUangMasukController implements Initializable {
             String pilihText=pilih_uang_masuk.getSelectionModel().getSelectedItem().toString();
             model.updateUangMasuk(idText, detailText, debitText, kreditText, pilihText, tanggalText);
             if(model.getUpdate()==true){
-                nav.showAlert(Alert.AlertType.INFORMATION, "Sukses", null, "Uang masuk telah disimpan..");
+                nav.showAlert(Alert.AlertType.INFORMATION, "Completado Exitosamente", null, "Dinero entrante ahorrado..");
             }
             else{
-                nav.showAlert(Alert.AlertType.ERROR, "Error", null, "Uang masuk gagal disimpan..");
+                nav.showAlert(Alert.AlertType.ERROR, "Error", null, "El dinero entrante no pudo ahorrar..");
             }
         }
     }

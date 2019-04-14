@@ -13,7 +13,7 @@ public class exit {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Confirmación");
         alert.setHeaderText(null);
-        alert.setContentText("Seguro que quieres salir de la aplicación. ?");
+        alert.setContentText("Seguro que quieres salir de la aplicación.?");
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK){
