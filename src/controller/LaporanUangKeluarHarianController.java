@@ -1,5 +1,6 @@
 package controller;
 
+import JasperViewerFX.JasperViewerFX;
 import db.conexion;
 import function.navigation;
 import function.time;
@@ -164,7 +165,10 @@ public class LaporanUangKeluarHarianController implements Initializable {
                 parameter.put("total", total_uang_keluar.getText());
                 jasRep = JasperCompileManager.compileReport(jasDes);
                 jasPri = JasperFillManager.fillReport(jasRep, parameter, kon.con);
-                JasperViewer.viewReport(jasPri, false);
+                new JasperViewerFX().viewReport("",jasPri);
+                //JasperViewer.viewReport(jasPri, false);
+               
+                
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, e);
             }

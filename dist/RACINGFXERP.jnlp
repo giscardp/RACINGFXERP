@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="RACINGFXERP.jar" size="256508" download="eager" />
+    <jar href="RACINGFXERP.jar" size="275111" download="eager" />
     <jar href="lib\TrayNotification.jar" size="41019" download="eager" />
     <jar href="lib\commons-beanutils-1.8.2.jar" size="231891" download="eager" />
     <jar href="lib\commons-collections-3.2.1.jar" size="575389" download="eager" />
@@ -18,7 +18,7 @@
     <jar href="lib\groovy-all-2.0.1.jar" size="6191960" download="eager" />
     <jar href="lib\itext-2.1.7.jar" size="1130070" download="eager" />
     <jar href="lib\jasper-compiler-jdt-5.5.23.jar" size="1213732" download="eager" />
-    <jar href="lib\jasperreports-5.5.0.jar" size="4662581" download="eager" />
+    <jar href="lib\jasperreports-6.7.0.jar" size="5532633" download="eager" />
     <jar href="lib\javax.servlet-3.0.jar" size="83586" download="eager" />
     <jar href="lib\jfoenix-8.0.8.jar" size="2708772" download="eager" />
     <jar href="lib\junit-4.12-sources.jar" size="200355" download="eager" />

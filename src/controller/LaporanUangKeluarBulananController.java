@@ -164,6 +164,8 @@ public class LaporanUangKeluarBulananController implements Initializable {
                 jasRep = JasperCompileManager.compileReport(jasDes);
                 jasPri = JasperFillManager.fillReport(jasRep, parameter, kon.con);
                 JasperViewer.viewReport(jasPri, false);
+               
+                
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, e);
             }
